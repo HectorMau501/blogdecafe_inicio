@@ -75,9 +75,13 @@ img{
 }
 
 /**Header**/
-
-.header{
+.webp .header{  /*Version para navegadores modernos*/
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header{   /*Version para navegadores NO modernos*/
     background-image: url(../img/banner.jpg);
+}
+.header{
     height: 60rem;
     background-size: cover;/*Para que cubra todo el espacio disponible*/
     background-repeat: no-repeat;/*No repita la imagen*/
@@ -163,12 +167,17 @@ img{
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
 }
 
 @media (min-width: 768px) {
     .boton{
         display: inline-block; /*El display inline-block toma el espacio que requiere si respeta algunas instrucciones pero no hacia a los lados*/
     }
+}
+
+.boton:hover{
+    cursor: pointer;
 }
 
 .boton--primario{
@@ -268,4 +277,43 @@ img{
 .curso__label,
 .curso__info{
     font-size: 2rem;
+}
+
+
+/**Contacto**/
+
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/**Formulario**/
+
+.formulario{
+    background-color: var(--Blanco);
+    margin: -5rem auto 0 auto; /*arriba derecho abajo izquierdo*/
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field{
+    flex: 1rem;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea{
+    height: 20rem;
 }

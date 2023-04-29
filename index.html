@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogDeCafé</title>
+    <meta name="description" content="Página web de blog de café">
+
+    <!--Prefetch
+         va a cargar la siguiente pagina al que el usuario iria-->
+    <!--Asegurarte que es la siguiente pagina a la que el usuario va ingresar, para solo cargar esa-->
+    <link rel="prefetch" href="nosotros.html" as="document">
+
+
+    <!-- Preload
+         este sirve para si ocupamos archivos lo mas rapido posible, los cargue los mas pronto posible -->
+    <!--Se pueden cargar videos, imagenes, cualquier cosa-->
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Kaushan+Script&family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" 
+        crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Kaushan+Script&family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-    
+
 </head>
 <body>
 
@@ -42,7 +59,11 @@
 
                 <article class="entrada"><!--Esta se usa cuando tenemos un blog, cuando tenemos centrado en un footor y tambien las noticias se ponen en un article-->
                     <div class="entrada__imagen">
-                        <img src="img/blog1.jpg" alt="imagen blog">
+                        <picture><!--picture es para poner la nueva etiqueta de souce y poner el nuevo formato-->
+                            <!--Aqui el nacegador va a poner el que soporte, solo que el webp pesa menos y sera mas eficiente el navegador-->
+                            <source loading="lazy" srcset="img/blog1.webp" type="image/webp"><!--Este formato es para que pese menos la imagen y sea mas rapido, en el navegador va a poner el que soporte-->
+                            <img loading="lazy" src="img/blog1.jpg" alt="imagen blog"> <!--Loading = lazy es para que descargur cuando lleguemos a esa parte esto es para mejorar el perfomance-->
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -55,7 +76,10 @@
 
                 <article class="entrada"><!--Esta se usa cuando tenemos un blog, cuando tenemos centrado en un footor y tambien las noticias se ponen en un article-->
                     <div class="entrada__imagen">
-                        <img src="img/blog2.jpg" alt="imagen blog">
+                        <picture>
+                            <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                            <img loading="lazy" src="img/blog2.jpg" alt="imagen blog"> 
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -68,7 +92,10 @@
 
                 <article class="entrada"><!--Esta se usa cuando tenemos un blog, cuando tenemos centrado en un footor y tambien las noticias se ponen en un article-->
                     <div class="entrada__imagen">
-                        <img src="img/blog3.jpg" alt="imagen blog">
+                        <picture>
+                            <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                            <img loading="lazy" src="img/blog3.jpg" alt="imagen blog"> 
+                        </picture>
                     </div>
 
                     <div class="entrada__contenido">
@@ -93,7 +120,9 @@
                         <p class="widget-curso__label">Cupo:
                             <span class="widget-curso__info">20</span>
                         </p>
-                        <a href="entrada.html" class="boton boton--secundario">Más Información</a><!--En la clase boton la primera es el bloque y bloque con modificador-->
+                        <a href="entrada.html" class="boton boton--secundario">Más Información
+                            sobre nuestros cursos
+                        </a><!--En la clase boton la primera es el bloque y bloque con modificador-->
                     </li>
 
                     <li class="widget-curso"> <!--Bloque-->
@@ -127,5 +156,7 @@
             </div>
         </footer>
 
+    <!--Por regla el codigo de JavaScript se pone antes del cierre del body-->
+        <script src="js/modernizr.js"></script>
 </body>
 </html>
