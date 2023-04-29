@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogDeCafé</title>
+    <meta name="description" content="Página web de blog de café">
+
+    <!--Prefetch
+         va a cargar la siguiente pagina al que el usuario iria-->
+    <!--Asegurarte que es la siguiente pagina a la que el usuario va ingresar, para solo cargar esa-->
+    <link rel="prefetch" href="nosotros.html" as="document">
+
+
+    <!-- Preload
+         este sirve para si ocupamos archivos lo mas rapido posible, los cargue los mas pronto posible -->
+    <!--Se pueden cargar videos, imagenes, cualquier cosa-->
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Kaushan+Script&family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" 
+        crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Kaushan+Script&family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
     
 </head>
@@ -87,6 +104,8 @@
                 </div>
             </div>
         </footer>
-
+        
+            <!--Por regla el codigo de JavaScript se pone antes del cierre del body-->
+        <script src="js/modernizr.js"></script>
 </body>
 </html>
